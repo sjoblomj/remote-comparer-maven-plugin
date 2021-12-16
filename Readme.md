@@ -22,50 +22,50 @@ Include in your pom.xml file:
 
 ```xml
 <project>
-	<!-- ... groupId, artifactId, definitions and dependencies ... -->
+  <!-- ... groupId, artifactId, definitions and dependencies ... -->
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.sjoblomj</groupId>
-				<artifactId>remote-comparer-maven-plugin</artifactId>
-				<version>1.0.0</version>
-				<executions>
-					<execution>
-						<id>compare schema-definition</id>
-						<goals>
-							<goal>remote-compare</goal>
-						</goals>
-						<configuration>
-							<localFilePath>src/main/resources/schema-definition.json</localFilePath>
-							<remoteFileUri>https://example.com/remote/schema/definition</remoteFileUri>
-							<timeoutMs>20000</timeoutMs>
-							<failOnFileDifference>true</failOnFileDifference>
-							<failOnFilesNotFound>true</failOnFilesNotFound>
-						</configuration>
-					</execution>
-					<execution>
-						<id>compare properties</id>
-						<goals>
-							<goal>remote-compare</goal>
-						</goals>
-						<configuration>
-							<localFilePath>src/main/resources/application.properties</localFilePath>
-							<remoteFileUri>https://example.com/remote/application.properties</remoteFileUri>
-							<smallWarningMessage>true</smallWarningMessage>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.github.sjoblomj</groupId>
+        <artifactId>remote-comparer-maven-plugin</artifactId>
+        <version>1.0.2</version>
+        <executions>
+          <execution>
+            <id>compare schema-definition</id>
+            <goals>
+              <goal>remote-compare</goal>
+            </goals>
+            <configuration>
+              <localFilePath>src/main/resources/schema-definition.json</localFilePath>
+              <remoteFileUri>https://example.com/remote/schema/definition</remoteFileUri>
+              <timeoutMs>20000</timeoutMs>
+              <failOnFileDifference>true</failOnFileDifference>
+              <failOnFilesNotFound>true</failOnFilesNotFound>
+            </configuration>
+          </execution>
+          <execution>
+            <id>compare properties</id>
+            <goals>
+              <goal>remote-compare</goal>
+            </goals>
+            <configuration>
+              <localFilePath>src/main/resources/application.properties</localFilePath>
+              <remoteFileUri>https://example.com/remote/application.properties</remoteFileUri>
+              <smallWarningMessage>true</smallWarningMessage>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 
-	<repositories>
-		<repository>
-			<id>jitpack.io</id>
-			<url>https://jitpack.io</url>
-		</repository>
-	</repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>jitpack.io</id>
+      <url>https://jitpack.io</url>
+    </pluginRepository>
+  </pluginRepositories>
 </project>
 ```
 
