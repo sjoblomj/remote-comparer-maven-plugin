@@ -14,7 +14,7 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.UUID;
 
-@Mojo(name = "remote-compare", defaultPhase = LifecyclePhase.VALIDATE)
+@Mojo(name = "remote-compare", defaultPhase = LifecyclePhase.VALIDATE, threadSafe = true)
 public class RemoteComparer extends AbstractMojo {
 
 	/**
