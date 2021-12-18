@@ -144,12 +144,12 @@ public class RemoteComparer extends AbstractMojo {
 				} else {
 
 					if (!smallWarningMessage)
-						getLog().warn("################################");
+						getLog().warn("#".repeat(71));
 
 					getLog().warn(message);
 
 					if (!smallWarningMessage)
-						getLog().warn("################################");
+						getLog().warn("#".repeat(71));
 				}
 			}
 		} catch (IOException e) {
