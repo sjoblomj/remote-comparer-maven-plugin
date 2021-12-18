@@ -94,16 +94,16 @@ public class RemoteComparer extends AbstractMojo {
 	}
 
 	private File getLocalFile() throws MojoExecutionException {
-		File l0 = new File(localFilePath);
-		File l1 = project != null ? new File(project.getArtifactId(), localFilePath) : null;
+		File l0 = project != null ? new File(project.getBasedir(), localFilePath) : null;
+		File l1 = new File(localFilePath);
 
-		if (l0.isFile())
+		if (l0 != null && l0.isFile())
 			return l0;
-		else if (l1 != null && l1.isFile())
+		else if (l1.isFile())
 			return l1;
 		else {
-			String message = "The local file '" + localFilePath + "' could not be found. Looked here: '" +
-				l0.getAbsolutePath() + "'" + (l1 != null ? "\n'" + l1.getAbsolutePath() + "'" : "");
+			String message = "The local file '" + localFilePath + "' could not be found. Looked here:\n" +
+				(l0 != null ? "'" + l0.getAbsolutePath() + "'\n" : "") + "'" + l1.getAbsolutePath() + "'";
 			if (failOnFilesNotFound)
 				throw new MojoExecutionException(message);
 			else {

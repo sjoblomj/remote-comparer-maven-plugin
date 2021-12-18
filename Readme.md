@@ -29,7 +29,7 @@ Include in your pom.xml file:
       <plugin>
         <groupId>com.github.sjoblomj</groupId>
         <artifactId>remote-comparer-maven-plugin</artifactId>
-        <version>1.0.2</version>
+        <version>1.0.3</version>
         <executions>
           <execution>
             <id>compare schema-definition</id>
@@ -78,7 +78,7 @@ The plugin can be run directly from the terminal in a directory with a maven pro
 A few technical notes for the interested:
 * The remote files will be downloaded to the target directory. After comparison, they is deleted.
 * When comparing files, the end of lines are not considered.
-* Maven Modules are supported: If the remote-comparer-maven-plugin is in a submodule, then give the `localFilePath` relative to the submodule. When building from the submodule, the file will be found fine. When building from the parent module, the artifactId of the submodule will be used to locate the file in the submodule.
+* Maven Modules are supported: If the remote-comparer-maven-plugin is in a submodule, then give the `localFilePath` relative to the submodule. The base directory of the submodule will be used as the path in which to look for `localFilePath`.
 * The plugin runs during the `VALIDATE` phase of Maven.
 
 
