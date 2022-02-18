@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 
 
+## [1.0.4] - 2022-02-18
+
+### Changed
+
+- Now using Java 8 instead of Java 11, so that applications running Java 8 can use the remote-comparer-maven-plugin.
+- Bumped dependency versions.
+
 ## [1.0.3] - 2021-12-18
 
 ### Added

@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.Collections;
 import java.util.UUID;
 
 @Mojo(name = "remote-compare", defaultPhase = LifecyclePhase.VALIDATE, threadSafe = true)
@@ -144,12 +145,12 @@ public class RemoteComparer extends AbstractMojo {
 				} else {
 
 					if (!smallWarningMessage)
-						getLog().warn("#".repeat(71));
+						getLog().warn(String.join("", Collections.nCopies(71, "#")));
 
 					getLog().warn(message);
 
 					if (!smallWarningMessage)
-						getLog().warn("#".repeat(71));
+						getLog().warn(String.join("", Collections.nCopies(71, "#")));
 				}
 			}
 		} catch (IOException e) {
