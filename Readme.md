@@ -14,7 +14,7 @@ If the local and remote files are equal, the plugin returns fine; if not, a warn
 * `timeoutMs` _optional_: Timeout in milliseconds for fetching the remote file. A timeout of 0 is interpreted as infinite timeout. Default: `10000`
 * `failOnFileDifference` _optional_: If set to true, the build will fail if the files differ (or if errors arise when checking if they are different). If set to false (default), the build will NOT fail but simply produce a warning. Default: `false`
 * `failOnFilesNotFound` _optional_: If set to true, the build will fail if the local file can't be found or the remote file can't be downloaded. If set to false (default), the build will NOT fail but simply produce a warning. Default: `false`
-* `smallWarningMessage` _optional_: By default, the warning message given if the local and remote files differ is large. Set this to true to instead print warning message that only contain the necessary information.. Default: `false`
+* `smallWarningMessage` _optional_: By default, the warning message given if the local and remote files differ is large to attract the users attention. Set this to true to instead print a smaller warning message that only contain the necessary information. Default: `false`
 
 ### Maven
 Example of how to compare two local files with remote counterparts.
@@ -29,7 +29,7 @@ Include in your pom.xml file:
       <plugin>
         <groupId>com.github.sjoblomj</groupId>
         <artifactId>remote-comparer-maven-plugin</artifactId>
-        <version>1.0.4</version>
+        <version>1.0.5</version>
         <executions>
           <execution>
             <id>compare schema-definition</id>
@@ -76,14 +76,15 @@ The plugin can be run directly from the terminal in a directory with a maven pro
 
 ### Technical
 A few technical notes for the interested:
-* The remote files will be downloaded to the target directory. After comparison, they is deleted.
-* When comparing files, the end of lines are not considered.
+* The remote files will be downloaded to the target directory. After comparison, they are deleted.
+* When comparing files, the line endings are not considered.
 * Maven Modules are supported: If the remote-comparer-maven-plugin is in a submodule, then give the `localFilePath` relative to the submodule. The base directory of the submodule will be used as the path in which to look for `localFilePath`.
 * The plugin runs during the `VALIDATE` phase of Maven.
 
 
 ## License
 This code is dual-licensed under [Apache License 2.0 or later](LICENSE), or the [MIT License](LICENSE-MIT)
+
 
 ## Icon
 The icon for this project represents a file on a local drive on the left, and a remote file from the Internet on the right. The Apache Maven feathers form an equality sign between them.

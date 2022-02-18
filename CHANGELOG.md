@@ -3,12 +3,22 @@
 All notable changes to this project will be documented in this file.
 
 
+## [1.0.5] - 2022-02-18
+
+### Changed
+
+- Readme improvements.
+
+
+
 ## [1.0.4] - 2022-02-18
 
 ### Changed
 
 - Now using Java 8 instead of Java 11, so that applications running Java 8 can use the remote-comparer-maven-plugin.
 - Bumped dependency versions.
+
+
 
 ## [1.0.3] - 2021-12-18
 
@@ -23,6 +33,8 @@ All notable changes to this project will be documented in this file.
 - Readme improvement.
 - More elegant handling of warning message decoration.
 
+
+
 ## [1.0.2] - 2021-12-16
 
 ### Changed
@@ -30,11 +42,15 @@ All notable changes to this project will be documented in this file.
 - Readme improvement.
 - Changing groupId of plugin.
 
+
+
 ## [1.0.1] - 2021-12-16
 
 ### Changed
 
 - Nothing, trial release to GitHub.
+
+
 
 ## [1.0.0] - 2021-12-13
 
