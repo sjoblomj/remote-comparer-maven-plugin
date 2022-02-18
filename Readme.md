@@ -29,7 +29,7 @@ Include in your pom.xml file:
       <plugin>
         <groupId>com.github.sjoblomj</groupId>
         <artifactId>remote-comparer-maven-plugin</artifactId>
-        <version>1.0.4</version>
+        <version>1.0.5</version>
         <executions>
           <execution>
             <id>compare schema-definition</id>
